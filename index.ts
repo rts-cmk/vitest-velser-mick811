@@ -22,3 +22,26 @@ export function handleInput(value: number | string | null | undefined): boolean 
   
   return false;
 }
+
+/**
+ * Asynkron funktion der returnerer et Promise.
+ * Test af success og fejltilfælde.
+ * 
+ * @param shouldSucceed - Hvis true, resolver Promise med data, ellers rejecter med fejl
+ * @param data - Data der skal returneres ved succes
+ * @returns Promise der resolver med data eller rejecter med fejl
+ */
+export async function fetchData(
+    shouldSucceed: boolean = true,
+    data: string = "success"
+  ): Promise<string> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (shouldSucceed) {
+          resolve(data);
+        } else {
+          reject(new Error("operation failed"));
+        }
+      }, 10);
+    });
+  }
