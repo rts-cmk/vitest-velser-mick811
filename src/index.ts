@@ -8,22 +8,13 @@ import { getUser } from "./api";
  * @returns true hvis værdien er gyldig (ikke-null tal >= 0 eller ikke-tom streng), ellers false
  */
 export function handleInput(value: number | string | null | undefined): boolean {
-    // håndterer null og undefined eksplicit
-    if (value === null || value === undefined) {
-        return false;
-    }
-
-    // håndterer numbers - validerer at det er et endeligt tal >= 0
+    if(value == null) return false;
     if (typeof value === "number") {
         return Number.isFinite(value) && value >= 0;
     }
-
-    // håndterer strings - trim fjerner whitespace og tjekker længde
     if (typeof value === "string") {
         return value.trim().length > 0;
     }
-
-    // fallback for ubekendt type (sker ikke med TypeScript, men defensive programming)
     return false;
 }
 
@@ -49,21 +40,6 @@ export async function fetchData(
 }
 
 /**
- * Validerer at user ID er gyldigt.
- * 
- * @param userId - ID for brugeren der skal valideres
- * @throws Error hvis user ID er ugyldigt
- */
-function validateUserId(userId: number): void {
-    if (!Number.isInteger(userId)) {
-        throw new Error("user id must be an integer");
-    }
-    if (userId <= 0) {
-        throw new Error("user id must be positive");
-    }
-}
-
-/**
  * Henter bruger og formaterer navnet.
  * Bruger ekstern API afhængighed.
  * 
@@ -71,7 +47,12 @@ function validateUserId(userId: number): void {
  * @returns Promise med formateret bruger navn
  */
 export async function getUserName(userId: number): Promise<string> {
-    validateUserId(userId);
+    if (!Number.isInteger(userId)) {
+        throw new Error("user id must be an integer");
+    }
+    if (userId <= 0) {
+        throw new Error("user id must be positive");
+    }
 
     const user = await getUser(userId);
     return user.name.toLowerCase();

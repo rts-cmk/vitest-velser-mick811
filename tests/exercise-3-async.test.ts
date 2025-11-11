@@ -1,12 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { fetchData } from "../src/index";
 
-/**
- * Øvelse 3: Test af asynkrone funktioner
- * 
- * Asynkron testning kræver korrekt håndtering af ventetid og fejl. 
- * Det er vigtigt at sikre, at testen venter på resultatet og ikke afsluttes for tidligt.
- */
 describe("fetchData - Øvelse 3: Asynkrone funktioner", () => {
     let cases: {
         shouldSucceed: boolean

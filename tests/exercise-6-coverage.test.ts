@@ -2,15 +2,6 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { handleInput, fetchData, getUserName } from "../src/index";
 import * as api from "../src/api";
 
-/**
- * Øvelse 6: Testdækning og refaktorering
- * 
- * Testdækning handler om at sikre, at alle relevante dele af koden bliver testet. 
- * Refaktorering skal ikke ændre funktionalitet, og tests hjælper med at bevare adfærden.
- * 
- * Denne fil samler alle tests for at sikre fuld dækning af alle funktioner.
- * Kør "bun run test:coverage" for at se testdækningsrapporten.
- */
 describe("Øvelse 6: Testdækning - Alle funktioner", () => {
     beforeEach(() => {
         // nulstiller alle mocks før hver test

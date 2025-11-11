@@ -2,12 +2,6 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { getUserName } from "../src/index";
 import * as api from "../src/api";
 
-/**
- * Øvelse 5: Mocking af afhængigheder
- * 
- * Mocking bruges til at isolere funktioner og undgå sideeffekter. 
- * Det gør det muligt at teste logik uden at være afhængig af eksterne moduler.
- */
 describe("getUserName - Øvelse 5: Mocking af afhængigheder", () => {
     let cases: {
         userId: number

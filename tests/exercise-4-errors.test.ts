@@ -2,12 +2,6 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { getUserName } from "../src/index";
 import * as api from "../src/api";
 
-/**
- * Øvelse 4: Test af fejl og undtagelser
- * 
- * Fejltestning handler om at sikre, at koden reagerer korrekt i fejltilstande. 
- * Det styrker robustheden og gør det lettere at finde bugs.
- */
 describe("getUserName - Øvelse 4: Fejl og undtagelser", () => {
     beforeEach(() => {
         // nulstiller alle mocks før hver test
