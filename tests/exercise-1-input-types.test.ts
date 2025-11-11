@@ -1,15 +1,15 @@
 import { describe, it, expect } from "vitest";
 import { handleInput } from "../src/index";
 
-/**
- * Øvelse 1: Test med forskellige inputtyper
- * 
- * Test af grænsetilfælde og inputvariation.
- * Formålet er at sikre, at funktioner reagerer korrekt på forskellige typer input og ikke fejler utilsigtet.
- * 
- * Se exercise-2-structure.test.ts for hvordan man strukturerer tests med describe, beforeEach og afterEach.
- */
 describe("handleInput - Øvelse 1: Inputtyper", () => {
+
+    it("should return false for unsupported types", () => {
+        // @ts-expect-error bevidst ugyldig type
+        expect(handleInput(true)).toBe(false)
+        // @ts-expect-error
+        expect(handleInput({})).toBe(false)
+      })
+
     it("should handle numbers correctly", () => {
         const cases = [
             { input: 1, expected: true },

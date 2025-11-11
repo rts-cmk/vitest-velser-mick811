@@ -1,16 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { handleInput } from "../src/index";
 
-/**
- * Øvelse 2: Strukturér dine tests med describe, beforeEach og afterEach
- * 
- * Teststruktur og gentagelighed. Ved at gruppere og genbruge opsætning 
- * undgår man duplikering og får mere overskuelige testfiler.
- * 
- * Denne fil demonstrerer brugen af describe, beforeEach og afterEach.
- * Dette er en forbedret struktur af samme tests fra exercise-1-input-types.test.ts,
- * som viser hvordan man kan organisere tests bedre.
- */
 describe("handleInput - Øvelse 2: Teststruktur", () => {
     let cases: {
         input: number | string | null | undefined
