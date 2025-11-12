@@ -1,3 +1,14 @@
+# how to run it (please read it actually)
+first, you have to install dependencies. i use **bun** as my package manager, so the command is `bun install` if you use another package manager like npm, yarn, or pnpm, replace `bun install` with the appropriate installation command, the same goes for the rest of the commands, obviously.
+
+to run the tests to check your tests and see if they passed or failed, you can run the test script defined in your package.json. use `bun run test` the run command is the standard way to execute a script defined in your package.json file for most package managers for example, npm run test or bun run test alternatively, you might be able to run it directly with just `vitest`.
+
+to generate a test coverage report, you can run the dedicated coverage script: `bun run test:coverage`.
+
+now with the cool fancy ui provided by vitest to launch the interactive testing interface in your browser, all you have to do is run `bun run test:ui` this should successfully open the browser to view the vitest ui.
+
+that's a wrap good luck.
+
 # Øvelser med Vitest
 
 Dette sæt øvelser er målrettet elever, der allerede har erfaring med testskrivning i JavaScript. Fokus er på at arbejde med Vitest og styrke forståelsen af testprincipper som struktur, fejlhåndtering, mocking og dækning.

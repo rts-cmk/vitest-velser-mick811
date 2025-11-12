@@ -1,0 +1,19 @@
+{
+  "name": "vitest-velser-mick811",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:ui": "vitest --ui"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@vitest/coverage-v8": "^4.0.8",
+    "@vitest/ui": "^4.0.8",
+    "vitest": "^4.0.8"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
